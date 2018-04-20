@@ -1,0 +1,29 @@
+{{#partial "contenido"}}
+	<h2>{{respuesta}}</h2>
+
+	<h3 style="text-align:center">Lista de Indicadores actualizada</h3>
+	
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+
+
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>Tus indicadores son:</th>
+			
+		</tr>
+		{{#each indicadores}}
+		<tr>
+			<td>{{this}}</td>			
+		</tr>
+		{{/each}}
+	</table>
+	</div>
+
+
+{{/partial}}
+{{>base.hbs}}

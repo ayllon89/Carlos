@@ -1,0 +1,19 @@
+{{#partial "contenido"}}
+	<h2>Evaluacion de indicador {{indicador.nombreIndicador}} en empresa {{empresa.nombreEmpresa}}</h2>
+	<h3 style="text-align:center">Evaluacion</h3>
+	
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+	
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			
+			<th>{{respuesta}}</th>
+		</tr>
+		
+	</table>
+	</div>
+{{/partial}}
+{{>base.hbs}}

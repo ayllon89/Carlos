@@ -1,0 +1,30 @@
+{{#partial "contenido"}}
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+	<table>
+		<tr> <!--Fila 1-->
+			<td> <!--Columna 1.1-->
+				<p></p>
+				<p>Seleccione una empresa para listar sus cuentas</p>
+				<div class="form-group">
+					<form role="form" action="/cuentas" method="POST">
+						<select name="empresaBuscada" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							
+							{{#each empresas}}
+							<option value= {{nombreEmpresa}}> {{nombreEmpresa}}</option>
+							{{/each}}
+						</select>
+						<button  type="submit" class="btn btn-primary">Ver cuentas</button>
+						
+					</form>
+				</div>
+			</td>
+			
+			
+		</tr>
+{{/partial}}
+{{>base.hbs}}
+
+

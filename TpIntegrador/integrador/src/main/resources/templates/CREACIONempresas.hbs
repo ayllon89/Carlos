@@ -1,0 +1,18 @@
+{{#partial "contenido"}}
+	
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+	
+	<h3 style="text-align:center">Cargar una nueva Empresa</h3>
+
+
+	<div class="form-group">
+		<form action="/empresaCreada" method="POST"> 
+		Nombre de la Empresa: <input type="text" name="nombreEmpresa">
+
+		<button  type="submit" class="btn btn-primary">Cargar</button>
+		</form>
+	</div>
+{{/partial}}
+{{>base.hbs}} 

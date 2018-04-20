@@ -1,0 +1,36 @@
+{{#partial "contenido"}} 
+	<h2>Cuentas de {{empresa}}</h2>
+	<h3 style="text-align:center">Cuentas</h3>
+	
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+	{{#if booleano}}
+
+	
+
+	<div class="table-responsive">
+	<table class="table">
+		<tr class="nombreColumna">
+			<th>Nombre</th>
+			<th>Detalle</th>
+		</tr>
+		{{#each cuentas}}
+		<tr>
+			<td name="nombreCuenta">{{this}}</td>
+			<td>
+				<a class="btn btn-secondary" href="detalleEspecificoCuenta/{{empresa}}/{{this}}">Ver detalle</a>
+			</td>
+		</tr>
+		{{/each}} 
+	</table>
+	</div>
+	
+	{{else}}
+
+	<p>{{respuesta}}</p>
+	{{/if}}
+{{/partial}}
+{{>base.hbs}}
+

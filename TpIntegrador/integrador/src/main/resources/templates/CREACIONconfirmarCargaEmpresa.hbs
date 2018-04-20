@@ -1,0 +1,43 @@
+{{#partial "contenido"}}
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			
+			<th>{{respuesta}}</th>
+		</tr>
+		
+	</table> 
+	</div>
+
+
+	<h3>Empresas Actuales</h3>
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>Nombre</th>
+			
+			
+		</tr>
+		{{#each empresas}}
+		<tr>
+			<td>{{nombreEmpresa}}</td>
+			
+			
+		</tr>
+		{{/each}}
+	</table>
+	</div>
+
+
+
+
+	
+
+{{/partial}}
+{{>base.hbs}}

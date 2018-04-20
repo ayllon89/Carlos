@@ -1,0 +1,47 @@
+{{#partial "contenido"}}
+	
+	<h3 style="text-align:center">Elija un opcion para crear</h3>
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+	<div class="form-group">
+					<form role="form" action="/crearIndicador" method="POST">
+										
+						<button  type="submit" class="btn btn-primary">Indicador</button>	
+					</form>
+	</div>
+	<div class="form-group">
+					<form role="form" action="/cuentaOIndicador" method="POST">
+											
+						<button  type="submit" class="btn btn-primary">Metodologia</button>	
+					</form>
+				</div>
+	<div class="form-group">
+					<form role="form" action="/crearEmpresa" method="POST">
+											
+						<button  type="submit" class="btn btn-primary">Empresa</button>	
+					</form>
+
+		</div>
+
+	<div class="form-group">
+					<form role="form" action="/CREARselecciomEmpresa" method="POST">
+											
+						<button  type="submit" class="btn btn-primary">Cuenta</button>	
+					</form>
+
+		</div>
+
+	<div class="form-group">
+
+					<form role="form" action="/PeriodoSeleccionEmpresa" method="POST">
+							
+						<button  type="submit" class="btn btn-primary">Periodo</button>	
+					</form>
+	</div>
+
+{{/partial}}
+{{>base.hbs}}
+
+

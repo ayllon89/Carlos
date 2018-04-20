@@ -1,0 +1,34 @@
+{{#partial "contenido"}}
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+	<p name = "empresita">{{empresa}}</p>
+	
+	<table>
+		<tr> <!--columna-->
+			
+				
+		<p>Seleccione una cuenta para cargarle un periodo</p>
+				<div class="form-group">
+					<form role="form" action="/cargaPeriodo" method="POST">
+						<select name="PeriodoCuentaSelecciona" class="custom-select">
+							<option value="-1">Seleccionar</option>
+							
+							{{#each cuentas}}
+							<option value= {{this}} > {{this}}</option>
+							{{/each}}
+						</select>
+					
+					<button  type="submit" class="btn btn-primary">Seleccionar</button>	
+					</form>
+				</div> 
+
+		</tr>
+
+			
+		
+{{/partial}}
+{{>base.hbs}}
+
+

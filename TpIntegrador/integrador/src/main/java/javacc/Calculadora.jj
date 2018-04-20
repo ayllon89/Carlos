@@ -1,0 +1,82 @@
+options
+{STATIC = false ;} 
+PARSER_BEGIN(Calculator)
+package javacc;
+public class Calculator{
+  }
+  PARSER_END(Calculator)
+SKIP:{
+  " "
+  | "\t"
+  | "\n"
+  | "\r"
+}
+
+TOKEN:{
+  <ADD:("+")>
+  | <SUB:("-")>
+  | <MUL:("*")>
+  | <DIV:("/")>
+  | <LBR:("(")>
+  | <RBR:(")")>
+  | <DOUBLE:(["0"-"9"])+>
+}
+double calculate():{
+  double result;
+}
+{
+  result = expr(){
+    return result;
+  }
+}
+double expr():{
+  double a;
+  double b;
+  double result = 0;
+}
+{
+  a = term(){
+    result+=a;
+  }
+  (<ADD>b = term(){
+    result+=b;
+  }
+  | <SUB>b = term(){
+    result-=b;
+  }
+  )*{
+    return result;
+  }
+}
+double term():{
+  double a;
+  double b;
+  double result = 0;
+}
+{
+  a = factor(){
+    result = a;
+  }
+  (<MUL>b = factor(){
+    result*=b;
+  }
+  | <DIV>b = factor(){
+    result/=b;
+  }
+  )*{
+    return result;
+  }
+}
+double factor():{
+  Token t;
+  double result;
+}
+{
+  t = <DOUBLE>{
+    return Double.parseDouble(t.image);
+  }
+  | <LBR>result = expr()<RBR>{
+    return result;
+  }
+}
+

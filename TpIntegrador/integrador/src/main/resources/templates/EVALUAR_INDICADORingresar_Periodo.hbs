@@ -1,0 +1,55 @@
+{{#partial "contenido"}}
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+	<table>
+		<tr>
+
+
+					
+		
+		{{#if booleano}}
+	<p>Seleccior un Periodo</p>
+	<div class="form-group">
+		<form action="/evaluarIndicador" method="POST"> 
+		<select name="fechaInicial" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							
+							{{#each fechasIniciales}}
+							<option value= {{this}}> {{this}}</option>
+							{{/each}}
+						</select>
+								
+
+		
+		<select name="fechaFinal" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							
+							{{#each fechasFinales}}
+							<option value= {{this}}> {{this}}</option>
+							{{/each}}
+						</select>
+
+
+
+						<button  type="submit" class="btn btn-primary">Seleccionar</button>
+								</form>
+			{{else}}
+			<p>{{respuesta}}</p>
+			{{/if}}
+
+
+		
+
+	</div>
+			
+
+</tr>
+	
+			
+{{/partial}}
+{{>base.hbs}}
+
+

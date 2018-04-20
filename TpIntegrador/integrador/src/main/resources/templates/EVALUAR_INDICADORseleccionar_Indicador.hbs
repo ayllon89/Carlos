@@ -1,0 +1,28 @@
+{{#partial "contenido"}}
+
+	
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+	<table>
+		<tr>
+				<p>Seleccione un Indicador para evaluar a la empresa {{empresa.nombreEmpresa}}</p>
+				<div class="form-group">
+					<form role="form" action="/seleccionarPeriodo" method="POST">
+						<select name="indicadorBuscado" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							
+							{{#each indicadores}}
+							<option value= {{nombreIndicador}}> {{nombreIndicador}}</option>
+							{{/each}}
+						</select>
+						<button  type="submit" class="btn btn-primary">Seleccionar</button>
+					</form>
+				</div>
+
+		</tr>		
+	
+{{/partial}}
+{{>base.hbs}}
+
+

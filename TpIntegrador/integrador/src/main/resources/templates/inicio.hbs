@@ -1,0 +1,21 @@
+{{#partial "contenido"}}
+	<h3>Seleccione una opcion</h3>
+
+	
+	 <form role="form" action="/" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Cerrar Sesion</button>
+	</form>
+
+
+	<div class="btn-group btn-group-justified" role="group" aria-label="Basic example">
+	<form role="form" action="/inicio" method="POST">
+  		<button type="submit" formaction="/seleccionarEmpresa" class="btn btn-primary">Aplicar Indicador</button>
+  		<button type="submit" formaction="/crearindicadorometodologia" class="btn btn-primary">Cargar</button>
+  		<button type="submit" formaction="/consulta" class="btn btn-primary">Consultar</button> 
+  		<button type="submit" formaction="/seleccionar_Metodologia" class="btn btn-primary">Aplicar Metodologia</button> 
+  	</form>
+	</div>
+
+	 
+{{/partial}}
+{{>base.hbs}}

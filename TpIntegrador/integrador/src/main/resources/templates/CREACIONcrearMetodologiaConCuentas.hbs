@@ -1,0 +1,99 @@
+{{#partial "contenido"}}
+
+<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+</form>
+
+<h3>Cargar Metodologia</h3>
+
+<form name="principal" action="/cargaCuentasMetodologia" method="POST">	
+	Nombre: <input type="text" name="nombreMetodologia">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="submit" class="btn btn-primary" >Confirmar</button>
+</form>
+	<table>
+	
+		<form role="form" action="/crearCondicionTaxativaCuentas" method="POST">
+			<tr>
+				<td>
+					Condicion taxativa
+				</td>
+				<td>
+					<select name="CuentaTaxativa">
+						<option>Cuenta</option>		
+						{{#each cuentas}}
+						<option value= {{this}}> {{this}}</option>
+						{{/each}}
+	
+					</select>
+				</td>
+				<td>
+					<select name="operadorTaxativo">
+						<option>Operador</option>
+						<option>Mayor</option>
+						<option>Menor</option>
+						<option>Igual</option>
+						<option>Distinto</option>
+					</select>		
+				</td>
+				<td>
+					valor:<input type="text" name="valor">&nbsp;&nbsp;&nbsp;
+				</td>
+				<td>
+					<button type="submit" class="btn btn-primary">Agregar</button>
+				</td>
+			</tr>
+		</form>
+		
+		<form role="form" action="/crearCondicionDeOrdenCuentas" method="POST">
+			<tr>
+				<td>
+					Condicion de orden
+				</td>
+				<td>
+					<select name="CuentaOrden">
+						<option>Cuenta</option>		
+						{{#each cuentas}}
+						<option value= {{this}}> {{this}}</option>
+						{{/each}}
+		
+					</select>
+				</td>
+				<td>
+					<select name="operadorOrden">
+						<option>Operador</option>
+						<option>Mayor</option>
+						<option>Menor</option>
+					</select>		
+				</td>
+				<td>
+					<button type="submit" class="btn btn-primary">Agregar</button>
+				</td>
+			</tr>
+		</form>
+	</table>	
+
+	
+
+
+
+<script>
+
+	if ( "{{validacion}}"!="") 
+	{
+		 alert("{{validacion}}");
+	}
+
+</script>
+    
+{{/partial}}
+{{>base.hbs}}

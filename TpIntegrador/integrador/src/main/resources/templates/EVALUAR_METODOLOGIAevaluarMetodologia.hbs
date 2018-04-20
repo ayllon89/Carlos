@@ -1,0 +1,37 @@
+{{#partial "contenido"}}
+	<h2>Evaluacion de metodologia {{nombreMetodologia}} en empresas.</h2>
+	<h3 style="text-align:center">Evaluacion</h3>
+
+
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+	{{#if tamano}}
+	<!-- SI ES CERO -->
+
+	<p>No conviene invertir en ninguna empresa aplicando la metodologia en el periodo ingresado</p>
+
+	{{else}}
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			
+			<th>Nombre empresa</th>
+		</tr>
+		
+							{{#each resultado}} 	
+							<tr>
+								<td>
+									<option value= {{nombreEmpresa}}> {{nombreEmpresa}}</option>
+								</td>
+							</tr>
+							{{/each}}
+
+		
+	</table>
+	</div>
+	{{/if}}
+{{/partial}}
+{{>base.hbs}}

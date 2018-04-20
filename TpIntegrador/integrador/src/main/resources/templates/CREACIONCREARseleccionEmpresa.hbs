@@ -1,0 +1,38 @@
+{{#partial "contenido"}}
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+	
+	<table>
+		<tr> <!--columna-->
+			
+				
+		<p>Seleccione una empresa para cargarle una Cuenta</p>
+				<div class="form-group">
+					<!--<form role="form" action="/crearCuenta" method="POST">-->
+					<form action="/cuentaCreada" method="POST"> 
+						<select name="empresaSeleccionaParaCuenta" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							
+							{{#each empresas}}
+							<option value= {{nombreEmpresa}}> {{nombreEmpresa}}</option>
+							{{/each}}
+						</select>
+				<div>
+					Nombre cuenta: <input type="text" name="nombreCuentaNueva">
+
+
+					<button  type="submit" class="btn btn-primary">Crear Cuenta</button>
+					</form>
+				</div>
+
+		</tr>
+
+			
+		
+{{/partial}}
+{{>base.hbs}}
+
+

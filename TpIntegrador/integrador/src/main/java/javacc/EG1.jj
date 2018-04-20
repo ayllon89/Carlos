@@ -1,0 +1,150 @@
+
+
+
+/**
+ * JavaCC template file created by SF JavaCC plugin 1.5.17+ wizard for JavaCC 1.5.0+
+ */
+PARSER_BEGIN(EG1)
+
+package javacc;
+import java.util.ArrayList;
+
+
+public class EG1
+{
+ 	static ArrayList<String > cuentas = new ArrayList<String >();
+ 	static ArrayList<String > operadores = new ArrayList<String >();
+
+ 	public static ArrayList<String> cuenta() {
+	return cuentas;
+}
+	public static ArrayList<String> operadores() {
+	return operadores;
+}
+  }
+
+PARSER_END(EG1)
+
+SKIP :
+{
+  " "
+| "\r"
+| "\t"
+| "\n"
+}
+
+TOKEN : /* OPERATORS */
+{
+  < PLUS : "+" >
+| < MINUS : "-" >
+| < TIMES : "*" >
+| < DIVIDE : "/" >
+}
+
+TOKEN :
+{
+  < NUMBER : (<DIGIT>)+  >
+| 
+  < VARIABLE : <LETTER> (< LETTER >|< DIGIT >)*  >
+|
+  < LEFT_PAREN : "(" >
+|
+  < RIGHT_PAREN : ")" >
+}
+
+TOKEN :
+{
+  <#DIGIT: ["0"-"9"]>
+| <#LETTER: ["a"-"z", "A"-"Z"]>
+}
+
+
+
+int start() :
+{}
+{
+  wff()   // "well formed formula"  
+  {
+    return 0;  // returns 0 on successful parse
+  }
+}
+
+
+
+  
+void wff() :
+{}
+{
+  term() 
+    (
+      binary_operator() term()
+    )*
+}
+
+void term() :
+{}
+{
+  symbol()  
+|
+  < LEFT_PAREN > wff() < RIGHT_PAREN >
+|
+  < MINUS > term()  // Unary minus
+}
+
+void binary_operator() :
+{Token t;}
+{
+  t = < PLUS >
+  {
+   operadores.add(t.toString());
+
+  }
+|
+	t = < MINUS >  // binary minus
+
+	{
+   operadores.add(t.toString());
+    }
+|
+	t = < TIMES >
+	{
+   operadores.add(t.toString());
+    }
+    
+| 	t = < DIVIDE >
+
+	{
+   operadores.add(t.toString());
+    }
+	
+}
+
+
+
+
+void symbol() :
+{Token t;
+
+
+}
+{
+  t= < NUMBER >
+  {
+    // Not necessary for parser construction - debugging code
+    System.out.println("matched number: "+t);
+    
+
+    
+  }
+| 
+  t= < VARIABLE >  {System.out.println("matched variable: "+t);
+  cuentas.add(t.toString());
+ 
+  }
+  
+}
+
+//
+//static final public ArrayList<String> cuenta(){
+//	  return cuentas;
+//  }

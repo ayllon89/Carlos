@@ -1,0 +1,19 @@
+{{#partial "contenido"}}
+	<h2>Iniciar Sesión</h2>
+	<h3 style="text-align:center">Ingrese datos</h3>
+
+
+	<div class="form-group">
+		<form action="/confirmaLogueo" method="POST"> 
+		User: <input type="text" name="user">
+		Password: <input type="password" name="password" size="20" maxlengh="20" />
+		
+
+
+
+
+		<button  type="submit" class="btn btn-primary">Confirmar</button>
+		</form>
+	</div>
+{{/partial}} 
+{{>base.hbs}}

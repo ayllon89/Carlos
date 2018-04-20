@@ -1,0 +1,41 @@
+{{#partial "contenido"}}
+	<h2>¿Que desea hacer?</h2>
+
+
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			
+			<th>{{respuesta}}</th>
+		</tr>
+		
+	</table>
+
+	</div>
+	{{#if booleano}}
+	<div class="form-group">
+
+					<form role="form" action="/inicio" method="POST">
+
+						<p>Puede acceder al menu principal</p>					
+						<button  type="submit" class="btn btn-primary">Menu principal</button>	
+					</form>
+		</div>
+	{{else}}
+	<div class="form-group">
+					<form role="form" action="/" method="POST">
+										
+						<button  type="submit" class="btn btn-primary">Inicio</button>	
+					</form>
+	</div>
+
+	{{/if}}
+	
+	
+
+
+
+	
+
+{{/partial}}
+{{>base.hbs}}

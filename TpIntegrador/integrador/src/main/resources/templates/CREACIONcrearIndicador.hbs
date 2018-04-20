@@ -1,0 +1,42 @@
+{{#partial "contenido"}}
+	<h2>Crear Indicador</h2>
+	<h3 style="text-align:center">Creacion</h3>
+	
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+
+	<div class="form-group">
+		<form action="/indicadorCreado" method="POST"> 
+		Nombre indicador: <input type="text" name="nombre">
+		Formula indicador: <input type="text" name="formula">
+		Asegurese de ingresar la formula sin espacios
+
+
+
+
+		<button  type="submit" class="btn btn-primary">Crear Indicador</button>
+		</form>
+	</div>
+
+	<div >
+	<table class="table">
+		<tr>
+			<th>Cuentas</th>
+			
+			
+		</tr>
+		{{#each cuentas}}
+		<tr>
+			<td>{{this}}</td>
+			
+			
+		</tr>
+		{{/each}}
+	</table>
+	</div>
+
+
+{{/partial}}
+{{>base.hbs}}

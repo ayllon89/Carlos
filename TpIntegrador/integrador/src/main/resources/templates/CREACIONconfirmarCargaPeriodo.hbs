@@ -1,0 +1,43 @@
+{{#partial "contenido"}}
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			
+			<th>{{respuesta}}</th>
+		</tr>
+		
+	</table> 
+	</div>
+
+
+	<!--<h3>Periodos actuales de la cuenta {{nombreCuenta}}</h3>
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>Fecha Inicio</th>
+			<th>Fecha Final</th>
+			<th>Valor</th>
+		</tr>
+		{{#each periodos}}
+		<tr>
+			<td>{{fechaInicial}}</td>
+			<td>{{fechaFinal}}</td>
+			<td>{{valorCuenta}}</td>
+		</tr>
+		{{/each}}
+	</table>
+	</div>-->
+
+
+
+
+	
+
+{{/partial}}
+{{>base.hbs}}

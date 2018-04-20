@@ -1,0 +1,31 @@
+{{#partial "contenido"}}
+
+	<h3 style="text-align:center">Detalle cuenta</h3>
+	
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+	{{#if booleano}}
+	<div class="table-responsive">
+	<table class="table">
+		<tr>
+			<th>Fecha Inicial</th>
+			<th>Fecha Final</th>
+			<th>Valor</th>
+		</tr>
+		{{#each periodos}}
+		<tr>
+			<td>{{fechaInicial}}</td>
+			<td>{{fechaFinal}}</td>
+			<td>{{valorCuenta}}</td>
+		</tr>
+		{{/each}}
+	</table>
+	</div>
+	{{else}}
+	<p>{{respuesta}}</p>
+	{{/if}}
+
+{{/partial}}
+{{>base.hbs}}

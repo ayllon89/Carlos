@@ -1,0 +1,50 @@
+{{#partial "contenido"}}
+
+
+	<form role="form" action="/inicio" method="POST">
+	<button type="submit" class="btn btn-primary inicio">Menu Principal</button>
+	</form>
+
+	
+	<table>	
+		<tr>
+				<p>Seleccione una Metodologia </p>
+				<div class="form-group">
+					<form role="form" action="/evaluarMetodologia" method="POST">
+						
+						<select name="metodologia_Buscada" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							
+							{{#each metodologias}}
+							<option value= {{this}}> {{this}}</option>
+							{{/each}}
+						</select>
+
+				<p>Seleccione una fecha inicial</p>
+					<select name="fechaInicial" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							
+							{{#each fechasIniciales}}
+							<option value= {{this}}> {{this}}</option>
+							{{/each}}
+					</select>
+								
+
+				<p>Seleccione una fecha final</p>
+					<select name="fechaFinal" class="custom-select">
+							<option value="-2">Seleccionar</option>
+							{{#each fechasFinales}}
+							<option value= {{this}}> {{this}}</option>
+							{{/each}}
+					</select>
+			
+			
+				<p>                                                                            </p>
+						<button  type="submit" class="btn btn-primary">Seleccionar</button>
+					</form>
+				</div>
+
+		</tr>		
+{{/partial}}
+{{>base.hbs}}
+  
